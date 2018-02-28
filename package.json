@@ -4,6 +4,8 @@
   "description": "Biblioteca do curso JS TDD na Prática.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/*.js",
+    "prepush": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/pponto/js-tdd-course/issues"
   },
-  "homepage": "https://github.com/pponto/js-tdd-course#readme"
+  "homepage": "https://github.com/pponto/js-tdd-course#readme",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3"
+  },
+  "dependencies": {
+    "ajv": "^6.2.0"
+  }
 }
