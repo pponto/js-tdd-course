@@ -4,9 +4,18 @@
   "description": "Biblioteca do curso JS TDD na Prática.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/*.js",
-    "prepush": "npm run lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint && npm run test:coverage",
+    "test": "./node_modules/.bin/mocha test/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha test/**/*.spec.js --require babel-register --watch",
+    "test:coverage":"nyc npm test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "exclude": ["test/**"]
   },
   "repository": {
     "type": "git",
@@ -24,10 +33,15 @@
   },
   "homepage": "https://github.com/pponto/js-tdd-course#readme",
   "devDependencies": {
-    "eslint": "^4.18.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "mocha": "^3.5.3",
+    "nyc": "^11.6.0"
   },
   "dependencies": {
     "ajv": "^6.2.0"
