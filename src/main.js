@@ -1,5 +1,4 @@
-/*
-Fizzbuzz*/
+// FizzBuzz
 const FizzBuzz = (num) => {
   if (num === 0) return 0;
   if (num % 3 === 0 && num % 5 === 0) return 'FizzBuzz';
@@ -10,8 +9,6 @@ const FizzBuzz = (num) => {
 };
 
 export default FizzBuzz;
-
-
 
 /* Calculadora
 const sum = (num1, num2) => num1 + num2;
